@@ -119,7 +119,7 @@
 (defmodule citar) ;establece citas
 
 (defrule citar1
-	?e <- (emparejamiento (nombre ?n1) (nombre ?n2) (tipoCita sinCita))
+	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita sinCita))
 	?p1 <- (persona (nombre ?n1) (edad ?edad1))
 	?p2 <- (persona (nombre ?n2) (edad ?edad2))
 	(test (<= (abs (- ?edad1 ?edad2)) 10))
@@ -128,24 +128,36 @@
 )
 
 (defrule citar2
-	?e <- (emparejamiento (nombre ?n1) (nombre ?n2) (tipoCita sinCita))
+	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) /*(tipoCita sinCita)*/)
 	?p1 <- (persona (nombre ?n1) (edad ?edad1))
 	?p2 <- (persona (nombre ?n2) (edad ?edad2))
-	(test (> (?edad1) 50))
-	(test (> (?edad2) 50))
+	(test (> ?edad1 50))
+	(test (> ?edad2 50))
 	=> 
 	(modify ?e (tipoCita citaNormal))
 )
 
-(defrule superCita
-	?e <- (emparejamiento (nombre ?n1) (nombre ?n2) (afinidad ?a) (tipoCita sinCita))
-	(test (> (?afinidad) 80))
-	=>
-	(modify ?e (tipoCita citaMagica))
+(deffunction calcAfin (?e1 ?e2 ?p1 ?p2 ?a1 ?a2)
+	(+ 
+		(min 10 (abs (- ?e1 ?e2)))
+		(min 10 (/ (abs (- ?p1 ?p2)) 2))
+		(min 10 (/ (abs (- ?a1 ?a2)) 4))
+	)
 )
 
 (defrule asignarAfinidad
+	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2))
+	(persona (nombre ?n1) (edad ?e1) (peso ?p1) (altura ?a1))
+	(persona (nombre ?n2) (edad ?e2) (peso ?p2) (altura ?a2))
+	=>
+	(modify ?e (afinidad (calcAfin ?e1 ?e2 ?p1 ?p2 ?a1 ?a2)))
+)
 
+(defrule superCita
+	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (afinidad ?a) /*(tipoCita sinCita)*/)
+	(test (>= ?a 90))
+	=>
+	(modify ?e (tipoCita citaMagica))
 )
 
 ;;;;;;;;;;;;
