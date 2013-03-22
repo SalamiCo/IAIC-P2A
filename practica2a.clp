@@ -32,9 +32,9 @@
 ;;; definicion de hechos iniciales (deffacts)
 
 (deffacts usuarios
-	(persona (nombre pedro) (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion informatico) (twitter TRUE) (facebook TRUE))
+	(persona (nombre pedro) (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion informatico) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre lucia) (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre lucia) (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook FALSE))
 
 	(persona (nombre darkhogg) (sexo hombre) (edad 21) (altura 175) (peso 81) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 2) (religion informatico) (twitter TRUE) (facebook TRUE))
 
@@ -78,7 +78,7 @@
 (defrule muySociable
 	?p <- (persona (muchosAmigos TRUE) (twitter TRUE) (facebook TRUE))
 	=>
-	(modify ?p (sociable (TRUE)))
+	(modify ?p (sociable TRUE))
 )
 
 (defrule caracterExtrovertido
@@ -100,7 +100,14 @@
 (defmodule compatibilizar) ;indica cuales son compatibles
 
 
-
+(defrule compatibles2
+	?p1 <- (persona (nombre ?n1) (caracter noClasificable) (muchosAmigos TRUE) (sexo hombre) (religion ?r1))
+	?p2 <- (persona (nombre ?n2) (caracter noClasificable) (muchosAmigos TRUE) (sexo mujer) (religion ?r2))
+	(test (<> ?r1 ?r2))
+	=>
+	(printout t ?n1 " => " ?r1 "; " ?n2 " => " ?r2 "; " (<> ?r1 ?r2) crlf)
+	(assert (emparejamiento (nombre1 ?n1) (nombre2 ?n2)))
+)
 ;;;;;;;;;;;;;;;;;;
 ;; Módulo Citar ;;
 
