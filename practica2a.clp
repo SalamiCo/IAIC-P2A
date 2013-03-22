@@ -74,17 +74,16 @@
 	(modify ?p (sociable (TRUE)))
 )
 
-(defrule caracterIntrovertido
-	?p <- (persona (timido TRUE) (muchosAmigos FALSE))
-	=>
-	(modify ?p (caracter (introvertido)))
-)
-
-
 (defrule caracterExtrovertido
 	?p <- (persona (gustaSalir TRUE) (sociable TRUE))
 	=>
 	(modify ?p (caracter extrovertido))
+)
+
+(defrule caracterIntrovertido
+	?p <- (persona (timido TRUE) (muchosAmigos FALSE))
+	=>
+	(modify ?p (caracter (introvertido)))
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
