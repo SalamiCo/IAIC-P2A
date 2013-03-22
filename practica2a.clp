@@ -138,7 +138,14 @@
 )
 
 (defrule superCita
-	?e <- (emparejamiento (nombre ?n1) (nombre ?n2) (tipoCita sinCita))
+	?e <- (emparejamiento (nombre ?n1) (nombre ?n2) (afinidad ?a) (tipoCita sinCita))
+	(test (> (?afinidad) 80))
+	=>
+	(modify ?e (tipoCita citaMagica))
+)
+
+(defrule asignarAfinidad
+
 )
 
 ;;;;;;;;;;;;
