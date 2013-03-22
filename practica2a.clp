@@ -100,15 +100,15 @@
 (defmodule compatibilizar) ;indica cuales son compatibles
 
 (defrule compatibles1
-	?p1 <- (persona (nombre ?n1) (sexo hombre) (religion ?r) (caracter ?c))
-	?p2 <- (persona (nombre ?n2) (sexo mujer) (religion ?r) (caracter ?c))
+	(persona (nombre ?n1) (sexo hombre) (religion ?r) (caracter ?c))
+	(persona (nombre ?n2) (sexo mujer) (religion ?r) (caracter ?c))
 	=>
 	(assert (emparejamiento (nombre1 ?n1) (nombre2 ?n2)))
 )
 
 (defrule compatibles2
-	?p1 <- (persona (nombre ?n1) (caracter noClasificable) (muchosAmigos TRUE) (sexo hombre) (religion ?r1))
-	?p2 <- (persona (nombre ?n2) (caracter noClasificable) (muchosAmigos TRUE) (sexo mujer) (religion ?r2))
+	(persona (nombre ?n1) (caracter noClasificable) (muchosAmigos TRUE) (sexo hombre) (religion ?r1))
+	(persona (nombre ?n2) (caracter noClasificable) (muchosAmigos TRUE) (sexo mujer) (religion ?r2))
 	(test (<> ?r1 ?r2))
 	=>
 	(assert (emparejamiento (nombre1 ?n1) (nombre2 ?n2)))
@@ -118,6 +118,28 @@
 
 (defmodule citar) ;establece citas
 
+(defrule citar1
+	?e <- (emparejamiento (nombre ?n1) (nombre ?n2) (tipoCita sinCita))
+	?p1 <- (persona (nombre ?n1) (edad ?edad1))
+	?p2 <- (persona (nombre ?n2) (edad ?edad2))
+	(test (<= (abs (- ?edad1 ?edad2)) 10))
+	=> 
+	(modify ?e (tipoCita citaNormal))
+)
+
+(defrule citar2
+	?e <- (emparejamiento (nombre ?n1) (nombre ?n2) (tipoCita sinCita))
+	?p1 <- (persona (nombre ?n1) (edad ?edad1))
+	?p2 <- (persona (nombre ?n2) (edad ?edad2))
+	(test (> (?edad1) 50))
+	(test (> (?edad2) 50))
+	=> 
+	(modify ?e (tipoCita citaNormal))
+)
+
+(defrule superCita
+	?e <- (emparejamiento (nombre ?n1) (nombre ?n2) (tipoCita sinCita))
+)
 
 ;;;;;;;;;;;;
 ;; Prueba ;;
