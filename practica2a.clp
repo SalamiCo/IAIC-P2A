@@ -68,6 +68,17 @@
 	(modify ?p (muchosAmigos (> ?na 20)))
 )
 
+(defrule muySociable
+	?p <- (persona (muchosAmigos TRUE) (twitter TRUE) (facebook TRUE))
+	=>
+	(modify ?p (sociable (TRUE)))
+)
+
+(defrule caracterIntrovertido
+	?p <- (persona (timido TRUE) (muchosAmigos FALSE))
+	=>
+	(modify ?p (caracter (introvertido)))
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Módulo Compatibilizar ;;
