@@ -3,24 +3,41 @@
 ;;; definicion de plantillas (deftemplates)
 
 (deftemplate persona
-	(slot nombre)
-	(slot sexo)
-	(slot edad)
-	(slot altura)
-	(slot peso)
-	(slot cuestaHablar)
-	(slot gustaSalir)
-	(slot numAmigos)
-	(slot religion)
-	(slot twitter)
-	(slot facebook))
+	(slot nombre (type SYMBOL) (default ""))
+	(slot sexo (type SYMBOL) (allowed-values hombre mujer))
+	(slot edad (type NUMBER) (default 18))
+	(slot altura (type NUMBER))
+	(slot peso (type NUMBER))
+	(slot cuestaHablar (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot gustaSalir (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot numAmigos (type NUMBER) (default 0))
+	(slot religion (type SYMBOL) (default ateo))
+	(slot twitter (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot facebook (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot timido (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot sociable (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot clasificacion (type SYMBOL) (allowed-values extrovertido introvertido noClasficable))
+	(slot muchosAmigos (type SYMBOL) (allowed-values TRUE FALSE))
+)
 
 
 
 ;;; definicion de hechos iniciales (deffacts)
 
 (deffacts usuarios
-	(nombre pedro) (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar false) (gustaSalir true) (numAmigos 25) (religion ateo) (twitter true) (facebook true))
+	(persona (nombre pedro) (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion informatico) (twitter TRUE) (facebook TRUE))
+
+	(persona (nombre lucia) (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook TRUE))
+
+	(persona (nombre darkhogg) (sexo hombre) (edad 21) (altura 175) (peso 81) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 2) (religion informatico) (twitter TRUE) (facebook TRUE))
+
+	(persona (nombre paloma) (sexo mujer) (edad 20) (altura 164) (peso 70) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 4) (religion ateo) (twitter TRUE) (facebook TRUE))
+
+	(persona (nombre raquel) (sexo mujer) (edad 22) (altura 165) (peso 60) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 65) (religion informatico) (twitter TRUE) (facebook TRUE))
+
+	(persona (nombre hackturo) (sexo hombre) (edad 24) (altura 170) (peso 70) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 21) (religion informatico) (twitter TRUE) (facebook TRUE))
+
+)
 
 
 
@@ -34,15 +51,33 @@
 ;;; definicion de reglas (defrules)
 ;; 3 modulos: clasificar, compatibilizar, emparejar
 
+;;;;;;;;;;;;;;;;;;;;;;;
+;; Módulo Clasificar ;;
+
 (defmodule clasificar) ;indica si es introvertido o extrovertido
-(defrule introvertido
-	persona ((nombre ?n) (sexo ?s) (edad ?e) (altura ?a) (peso ?p) (cuestaHablar true) (gustaSalir ?gs) (numAmigos ?na) (religion ?r) (twitter ?t) (facebook ?f))
+
+(defrule esTimido
+	(persona (nombre ?n) (cuestaHablar TRUE))
 	=>
-	)
+	(printout ?n " es timido." crlf)	
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Módulo Compatibilizar ;;
 
 (defmodule compatibilizar) ;indica cuales son compatibles
 
+
+;;;;;;;;;;;;;;;;;;
+;; Módulo Citar ;;
+
 (defmodule citar) ;establece citas
 
+
+;;;;;;;;;;;;
+;; Prueba ;;
+
 (reset)
+(focus clasificar compatibilizar citar)
 (run)
