@@ -86,6 +86,7 @@
 	(modify ?p (caracter (introvertido)))
 )
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Módulo Compatibilizar ;;
 
