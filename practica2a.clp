@@ -90,7 +90,7 @@
 (defrule caracterIntrovertido
 	?p <- (persona (timido TRUE) (muchosAmigos FALSE))
 	=>
-	(modify ?p (caracter (introvertido)))
+	(modify ?p (caracter introvertido))
 )
 
 
@@ -98,6 +98,7 @@
 ;; Módulo Compatibilizar ;;
 
 (defmodule compatibilizar) ;indica cuales son compatibles
+
 
 
 ;;;;;;;;;;;;;;;;;;
