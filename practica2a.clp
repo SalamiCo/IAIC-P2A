@@ -16,7 +16,7 @@
 	(slot facebook      (type SYMBOL) (allowed-values TRUE FALSE))
 	(slot timido        (type SYMBOL) (default FALSE) (allowed-values TRUE FALSE))
 	(slot sociable      (type SYMBOL) (default FALSE) (allowed-values TRUE FALSE))
-	(slot clasificacion (type SYMBOL) (default noClasificable) (allowed-values extrovertido introvertido noClasificable))
+	(slot caracter      (type SYMBOL) (default noClasificable) (allowed-values extrovertido introvertido noClasificable))
 	(slot muchosAmigos  (type SYMBOL) (default FALSE) (allowed-values TRUE FALSE))
 )
 
@@ -68,6 +68,13 @@
 	(modify ?p (muchosAmigos (> ?na 20)))
 )
 
+
+
+(defrule caracterExtrovertido
+	?p <- (persona (gustaSalir TRUE) (sociable TRUE))
+	=>
+	(modify ?p (caracter extrovertido))
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Módulo Compatibilizar ;;
