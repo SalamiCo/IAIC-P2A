@@ -3,21 +3,21 @@
 ;;; definicion de plantillas (deftemplates)
 
 (deftemplate persona
-	(slot nombre (type SYMBOL) (default ""))
-	(slot sexo (type SYMBOL) (allowed-values hombre mujer))
-	(slot edad (type NUMBER) (default 18))
-	(slot altura (type NUMBER))
-	(slot peso (type NUMBER))
-	(slot cuestaHablar (type SYMBOL) (allowed-values TRUE FALSE))
-	(slot gustaSalir (type SYMBOL) (allowed-values TRUE FALSE))
-	(slot numAmigos (type NUMBER) (default 0))
-	(slot religion (type SYMBOL) (default ateo))
-	(slot twitter (type SYMBOL) (allowed-values TRUE FALSE))
-	(slot facebook (type SYMBOL) (allowed-values TRUE FALSE))
-	(slot timido (type SYMBOL) (allowed-values TRUE FALSE))
-	(slot sociable (type SYMBOL) (allowed-values TRUE FALSE))
-	(slot clasificacion (type SYMBOL) (allowed-values extrovertido introvertido noClasficable))
-	(slot muchosAmigos (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot nombre        (type SYMBOL) (default ""))
+	(slot sexo          (type SYMBOL) (allowed-values hombre mujer))
+	(slot edad          (type NUMBER) (default 18))
+	(slot altura        (type NUMBER))
+	(slot peso          (type NUMBER))
+	(slot cuestaHablar  (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot gustaSalir    (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot numAmigos     (type NUMBER) (default 0))
+	(slot religion      (type SYMBOL) (default ateo))
+	(slot twitter       (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot facebook      (type SYMBOL) (allowed-values TRUE FALSE))
+	(slot timido        (type SYMBOL) (default FALSE) (allowed-values TRUE FALSE))
+	(slot sociable      (type SYMBOL) (default FALSE) (allowed-values TRUE FALSE))
+	(slot clasificacion (type SYMBOL) (default noClasificable) (allowed-values extrovertido introvertido noClasificable))
+	(slot muchosAmigos  (type SYMBOL) (default FALSE) (allowed-values TRUE FALSE))
 )
 
 
@@ -57,9 +57,15 @@
 (defmodule clasificar) ;indica si es introvertido o extrovertido
 
 (defrule esTimido
-	(persona (nombre ?n) (cuestaHablar TRUE))
+	?p <- (persona (cuestaHablar ?ch))
 	=>
-	(printout ?n " es timido." crlf)	
+	(modify ?p (timido ?ch))
+)
+
+(defrule tieneMuchosAmigos
+	?p <- (persona (numAmigos ?na))
+	=>
+	(modify ?p (muchosAmigos (> ?na 20)))
 )
 
 
