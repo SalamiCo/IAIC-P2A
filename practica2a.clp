@@ -99,6 +99,13 @@
 
 (defmodule compatibilizar) ;indica cuales son compatibles
 
+(defrule compatibles1
+	?p1 <- (persona (nombre ?n1) (sexo hombre) (religion ?r) (caracter ?c))
+	?p2 <- (persona (nombre ?n2) (sexo mujer) (religion ?r) (caracter ?c))
+	=>
+	(assert (emparejamiento (?n1) (?n2)))
+)
+
 
 (defrule compatibles2
 	?p1 <- (persona (nombre ?n1) (caracter noClasificable) (muchosAmigos TRUE) (sexo hombre) (religion ?r1))
