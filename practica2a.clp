@@ -103,16 +103,14 @@
 	?p1 <- (persona (nombre ?n1) (sexo hombre) (religion ?r) (caracter ?c))
 	?p2 <- (persona (nombre ?n2) (sexo mujer) (religion ?r) (caracter ?c))
 	=>
-	(assert (emparejamiento (?n1) (?n2)))
+	(assert (emparejamiento (nombre1 ?n1) (nombre2 ?n2)))
 )
-
 
 (defrule compatibles2
 	?p1 <- (persona (nombre ?n1) (caracter noClasificable) (muchosAmigos TRUE) (sexo hombre) (religion ?r1))
 	?p2 <- (persona (nombre ?n2) (caracter noClasificable) (muchosAmigos TRUE) (sexo mujer) (religion ?r2))
 	(test (<> ?r1 ?r2))
 	=>
-	(printout t ?n1 " => " ?r1 "; " ?n2 " => " ?r2 "; " (<> ?r1 ?r2) crlf)
 	(assert (emparejamiento (nombre1 ?n1) (nombre2 ?n2)))
 )
 ;;;;;;;;;;;;;;;;;;
