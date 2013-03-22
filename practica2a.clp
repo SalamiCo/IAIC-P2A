@@ -50,7 +50,7 @@
 
 	(persona (nombre brumjilda) (sexo mujer) (edad 46) (altura 155) (peso 50) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 2) (religion cristiano) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre pretestato) (sexo hombre) (edad 38) (altura 190) (peso 90) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 60) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre pretextato) (sexo hombre) (edad 38) (altura 190) (peso 90) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 60) (religion ateo) (twitter TRUE) (facebook TRUE))
 
 	(persona (nombre meridiana) (sexo mujer) (edad 24) (altura 150) (peso 80) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 3) (religion cristiano) (twitter FALSE) (facebook FALSE))
 
@@ -78,7 +78,7 @@
 
 	(persona (nombre sasha) (sexo mujer) (edad 25) (altura 168) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 200) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre nacho) (sexo hombre) (edad 38 (altura 185) (peso 85) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 250) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre nacho) (sexo hombre) (edad 38) (altura 185) (peso 85) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 250) (religion ateo) (twitter TRUE) (facebook TRUE))
 
 	(persona (nombre tenia) (sexo mujer) (edad 67) (altura 190) (peso 70) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 1) (religion jehova) (twitter FALSE) (facebook FALSE))
 
@@ -204,25 +204,33 @@
 	(modify ?e (tipoCita citaNormal))
 )
 
-(deffunction calcAfin (?e1 ?e2 ?p1 ?p2 ?a1 ?a2)
+(deffunction calcAfin (?e1 ?e2 ?p1 ?p2 ?a1 ?a2 ?t1 ?t2 ?r1 ?r2 ?tw1 ?tw2 ?fb1 ?fb2 ?s1 ?s2 ?na1 ?na2 ?c1 ?c2 ?sb1 ?sb2)
 	(+ 
-		(min 10 (abs (- ?e1 ?e2)))
-		(min 10 (/ (abs (- ?p1 ?p2)) 2))
-		(min 10 (/ (abs (- ?a1 ?a2)) 4))
+		(- 10 (min 10 (abs (- ?e1 ?e2))))
+		(- 10 (min 10 (/ (abs (- ?p1 ?p2)) 2)))
+		(- 10 (min 10 (/ (abs (- ?a1 ?a2)) 4)))
+		(if (= ?t1 ?t2) then 10 else 0)
+		(if (= ?r1 ?r2) then 10 else 0)
+		(if (= ?tw1 ?tw2) then 5 else 0)
+		(if (= ?fb1 ?fb2) then 5 else 0)
+		(if (= ?s1 ?s2) then 10 else 0)
+		(- 10 (min 10 (/ (abs (- ?na1 ?na2)) 2.5)))
+		(if (= ?c1 ?c2) then 10 else 0)
+		(if (= ?sb1 ?sb2) then 10 else 0)
 	)
 )
 
 (defrule asignarAfinidad
 	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2))
-	(persona (nombre ?n1) (edad ?e1) (peso ?p1) (altura ?a1))
-	(persona (nombre ?n2) (edad ?e2) (peso ?p2) (altura ?a2))
+	(persona (nombre ?n1) (edad ?e1) (peso ?p1) (altura ?a1) (timido ?t1) (religion ?r1) (twitter ?tw1) (facebook ?fb1) (gustaSalir ?s1) (numAmigos ?na1) (sociable ?sb1) (caracter ?c1))
+	(persona (nombre ?n2) (edad ?e2) (peso ?p2) (altura ?a2) (timido ?t2) (religion ?r2) (twitter ?tw2) (facebook ?fb2) (gustaSalir ?s2) (numAmigos ?na2) (sociable ?sb2) (caracter ?c2))
 	=>
-	(modify ?e (afinidad (calcAfin ?e1 ?e2 ?p1 ?p2 ?a1 ?a2)))
+	(modify ?e (afinidad (calcAfin ?e1 ?e2 ?p1 ?p2 ?a1 ?a2 ?t1 ?t2 ?r1 ?r2 ?tw1 ?tw2 ?fb1 ?fb2 ?s1 ?s2 ?na1 ?na2 ?c1 ?c2 ?sb1 ?sb2)))
 )
 
 (defrule superCita
 	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (afinidad ?a) /*(tipoCita sinCita)*/)
-	(test (>= ?a 90))
+	(test (>= ?a 85))
 	=>
 	(modify ?e (tipoCita citaMagica))
 )
