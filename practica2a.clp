@@ -20,6 +20,13 @@
 	(slot muchosAmigos  (type SYMBOL) (default FALSE) (allowed-values TRUE FALSE))
 )
 
+(deftemplate emparejamiento
+	(slot nombre1)
+	(slot nombre2)
+	(slot afinidad (type NUMBER) (default 0))
+	(slot tipoCita (type SYMBOL) (default sinCita) (allowed-values sinCita citaNormal citaMagica))
+)
+
 
 
 ;;; definicion de hechos iniciales (deffacts)
