@@ -241,7 +241,7 @@
 
 (defrule mostrarCompatibles
 	(declare (salience 30))
-	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita citaNormal))
+	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita sinCita))
 	=>
 	(printout t "> " ?n1 " y " ?n2 " son compatibles, pero no han sido citados." crlf)
 )
