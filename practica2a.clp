@@ -257,7 +257,7 @@
 	(declare (salience 10))
 	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita citaMagica) (afinidad ?a))
 	=>
-	(printout t "@ " ?n1 " y " ?n2 " tienen una Cita Mgica (afinidad " ?a "%)" crlf)
+	(printout t "@ " ?n1 " y " ?n2 " tienen una Cita Magica (afinidad " ?a "%)" crlf)
 )
 
 ;;;;;;;;;;;;
