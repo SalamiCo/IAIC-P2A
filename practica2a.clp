@@ -1,4 +1,4 @@
-;;;;; Práctica 2A IAIC ;;;;;
+;;;;; PrÃ¡ctica 2A IAIC ;;;;;
 
 ;;; definicion de plantillas (deftemplates)
 
@@ -34,7 +34,7 @@
 (deffacts usuarios
 	(persona (nombre "Pedro") (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre "Lucía") (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook FALSE))
+	(persona (nombre "LucÃ­a") (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook FALSE))
 
 	(persona (nombre "Daniel") (sexo hombre) (edad 21) (altura 175) (peso 81) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 2) (religion cristiano) (twitter TRUE) (facebook TRUE))
 
@@ -74,7 +74,7 @@
 
 	(persona (nombre "Hailey") (sexo mujer) (edad 22) (altura 160) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 30) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre "Ángel") (sexo hombre) (edad 22) (altura 170) (peso 60) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 15) (religion cristiano) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Ãngel") (sexo hombre) (edad 22) (altura 170) (peso 60) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 15) (religion cristiano) (twitter FALSE) (facebook FALSE))
 
 	(persona (nombre "Sasha") (sexo mujer) (edad 25) (altura 168) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 200) (religion ateo) (twitter TRUE) (facebook TRUE))
 
@@ -118,7 +118,7 @@
 ;;; variables globales (defglobal)
 
 (defglobal ?*crlf* = "
-") ; Esta variables es para poder añadir saltos de linea
+") ; Esta variables es para poder aÃ±adir saltos de linea
 
 
 
@@ -126,7 +126,7 @@
 ;; 3 modulos: clasificar, compatibilizar, emparejar
 
 ;;;;;;;;;;;;;;;;;;;;;;;
-;; Módulo Clasificar ;;
+;; MÃ³dulo Clasificar ;;
 
 (defmodule clasificar) ;indica si es introvertido o extrovertido
 
@@ -162,7 +162,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Módulo Compatibilizar ;;
+;; MÃ³dulo Compatibilizar ;;
 
 (defmodule compatibilizar) ;indica cuales son compatibles
 
@@ -181,7 +181,7 @@
 	(assert (emparejamiento (nombre1 ?n1) (nombre2 ?n2)))
 )
 ;;;;;;;;;;;;;;;;;;
-;; Módulo Citar ;;
+;; MÃ³dulo Citar ;;
 
 (defmodule citar) ;establece citas
 
@@ -250,14 +250,14 @@
 	(declare (salience 20))
 	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita citaNormal) (afinidad ?a))
 	=>
-	(printout t "$ ¡" ?n1 " y " ?n2 " han sido citados! (afinidad " ?a "%)" crlf)
+	(printout t "$ Â¡" ?n1 " y " ?n2 " han sido citados! (afinidad " ?a "%)" crlf)
 )
 
 (defrule mostrarCitadosMagicos
 	(declare (salience 10))
 	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita citaMagica) (afinidad ?a))
 	=>
-	(printout t "@ ¡¡" ?n1 " y " ?n2 " tienen una Cita Mágica!! (afinidad " ?a "%)" crlf)
+	(printout t "@ Â¡Â¡" ?n1 " y " ?n2 " tienen una Cita MÃ¡gica!! (afinidad " ?a "%)" crlf)
 )
 
 ;;;;;;;;;;;;
