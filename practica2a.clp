@@ -1,4 +1,4 @@
-;;;;; PrÃ¡ctica 2A IAIC ;;;;;
+;;;;; Prctica 2A IAIC ;;;;;
 
 ;;; definicion de plantillas (deftemplates)
 
@@ -34,7 +34,7 @@
 (deffacts usuarios
 	(persona (nombre "Pedro") (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre "LucÃ­a") (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook FALSE))
+	(persona (nombre "Lucia") (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook FALSE))
 
 	(persona (nombre "Daniel") (sexo hombre) (edad 21) (altura 175) (peso 81) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 2) (religion cristiano) (twitter TRUE) (facebook TRUE))
 
@@ -74,7 +74,7 @@
 
 	(persona (nombre "Hailey") (sexo mujer) (edad 22) (altura 160) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 30) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre "Ãngel") (sexo hombre) (edad 22) (altura 170) (peso 60) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 15) (religion cristiano) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Angel") (sexo hombre) (edad 22) (altura 170) (peso 60) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 15) (religion cristiano) (twitter FALSE) (facebook FALSE))
 
 	(persona (nombre "Sasha") (sexo mujer) (edad 25) (altura 168) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 200) (religion ateo) (twitter TRUE) (facebook TRUE))
 
@@ -250,14 +250,14 @@
 	(declare (salience 20))
 	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita citaNormal) (afinidad ?a))
 	=>
-	(printout t "$ Â¡" ?n1 " y " ?n2 " han sido citados! (afinidad " ?a "%)" crlf)
+	(printout t "$ " ?n1 " y " ?n2 " han sido citados (afinidad " ?a "%)" crlf)
 )
 
 (defrule mostrarCitadosMagicos
 	(declare (salience 10))
 	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita citaMagica) (afinidad ?a))
 	=>
-	(printout t "@ Â¡Â¡" ?n1 " y " ?n2 " tienen una Cita MÃ¡gica!! (afinidad " ?a "%)" crlf)
+	(printout t "@ " ?n1 " y " ?n2 " tienen una Cita Mgica (afinidad " ?a "%)" crlf)
 )
 
 ;;;;;;;;;;;;
