@@ -32,85 +32,85 @@
 ;;; definicion de hechos iniciales (deffacts)
 
 (deffacts usuarios
-	(persona (nombre pedro) (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Pedro") (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre lucia) (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook FALSE))
+	(persona (nombre "Lucía") (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook FALSE))
 
-	(persona (nombre dani) (sexo hombre) (edad 21) (altura 175) (peso 81) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 2) (religion cristiano) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Daniel") (sexo hombre) (edad 21) (altura 175) (peso 81) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 2) (religion cristiano) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre paloma) (sexo mujer) (edad 20) (altura 164) (peso 70) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 4) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Paloma") (sexo mujer) (edad 20) (altura 164) (peso 70) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 4) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre raquel) (sexo mujer) (edad 22) (altura 165) (peso 60) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 65) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Raquel") (sexo mujer) (edad 22) (altura 165) (peso 60) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 65) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre arturo) (sexo hombre) (edad 24) (altura 170) (peso 70) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 21) (religion cristiano) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Arturo") (sexo hombre) (edad 24) (altura 170) (peso 70) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 21) (religion cristiano) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre sara) (sexo mujer) (edad 36) (altura 160) (peso 50) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 15) (religion judio) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Sara") (sexo mujer) (edad 36) (altura 160) (peso 50) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 15) (religion judio) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre hermenegildo) (sexo hombre) (edad 65) (altura 170) (peso 63) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 14) (religion cristiano) (twitter TRUE) (facebook FALSE))
+	(persona (nombre "Hermenegildo") (sexo hombre) (edad 65) (altura 170) (peso 63) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 14) (religion cristiano) (twitter TRUE) (facebook FALSE))
 
-	(persona (nombre brumjilda) (sexo mujer) (edad 46) (altura 155) (peso 50) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 2) (religion cristiano) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Brunhilda") (sexo mujer) (edad 46) (altura 155) (peso 50) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 2) (religion cristiano) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre pretextato) (sexo hombre) (edad 38) (altura 190) (peso 90) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 60) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Pretextato") (sexo hombre) (edad 38) (altura 190) (peso 90) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 60) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre meridiana) (sexo mujer) (edad 24) (altura 150) (peso 80) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 3) (religion cristiano) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Meridiana") (sexo mujer) (edad 24) (altura 150) (peso 80) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 3) (religion cristiano) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre exuperio) (sexo hombre) (edad 60) (altura 170) (peso 68) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 1) (religion ateo) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Exuperio") (sexo hombre) (edad 60) (altura 170) (peso 68) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 1) (religion ateo) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre heularia) (sexo mujer) (edad 80) (altura 189) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 50) (religion judio) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Eulalia") (sexo mujer) (edad 80) (altura 189) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 50) (religion judio) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre gervasio) (sexo hombre) (edad 28) (altura 180) (peso 65) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 65) (religion cristiano) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Gervasio") (sexo hombre) (edad 28) (altura 180) (peso 65) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 65) (religion cristiano) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre herminia) (sexo mujer) (edad 30) (altura 180) (peso 80) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 12) (religion ateo) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Herminia") (sexo mujer) (edad 30) (altura 180) (peso 80) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 12) (religion ateo) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre wamba) (sexo hombre) (edad 101) (altura 140) (peso 38) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 0) (religion visigodo) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Wamba") (sexo hombre) (edad 101) (altura 140) (peso 38) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 0) (religion visigodo) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre theodora) (sexo mujer) (edad 19) (altura 167) (peso 58) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 2) (religion cristiano) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Theodora") (sexo mujer) (edad 19) (altura 167) (peso 58) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 2) (religion cristiano) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre ash) (sexo hombre) (edad 18) (altura 155) (peso 55) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 35) (religion cristiano) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Ash") (sexo hombre) (edad 18) (altura 155) (peso 55) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 35) (religion cristiano) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre misty) (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Misty") (sexo mujer) (edad 20) (altura 165) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre brock) (sexo hombre) (edad 22) (altura 190) (peso 90) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 21) (religion cristiano) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Brock") (sexo hombre) (edad 22) (altura 190) (peso 90) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 21) (religion cristiano) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre hailey) (sexo mujer) (edad 22) (altura 160) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 30) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Hailey") (sexo mujer) (edad 22) (altura 160) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 30) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre angel) (sexo hombre) (edad 22) (altura 170) (peso 60) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 15) (religion cristiano) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Ángel") (sexo hombre) (edad 22) (altura 170) (peso 60) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 15) (religion cristiano) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre sasha) (sexo mujer) (edad 25) (altura 168) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 200) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Sasha") (sexo mujer) (edad 25) (altura 168) (peso 50) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 200) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre nacho) (sexo hombre) (edad 38) (altura 185) (peso 85) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 250) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Nacho") (sexo hombre) (edad 38) (altura 185) (peso 85) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 250) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre tenia) (sexo mujer) (edad 67) (altura 190) (peso 70) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 1) (religion jehova) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Tenia") (sexo mujer) (edad 67) (altura 190) (peso 70) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 1) (religion jehova) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre julio) (sexo hombre) (edad 56) (altura 169) (peso 75) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 3) (religion cristiano) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Julio") (sexo hombre) (edad 56) (altura 169) (peso 75) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 3) (religion cristiano) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre maria) (sexo mujer) (edad 30) (altura 165) (peso 60) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 15) (religion ateo) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Maria") (sexo mujer) (edad 30) (altura 165) (peso 60) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 15) (religion ateo) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre junkpilwon) (sexo hombre) (edad 45) (altura 156) (peso 55) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 27) (religion tahoismo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Junkpilwon") (sexo hombre) (edad 45) (altura 156) (peso 55) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 27) (religion tahoismo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre minjoo) (sexo mujer) (edad 18) (altura 146) (peso 40) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 50) (religion sintohismo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Minjoo") (sexo mujer) (edad 18) (altura 146) (peso 40) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 50) (religion sintohismo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre groucho) (sexo hombre) (edad 76) (altura 177) (peso 70) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 75) (religion ateo) (twitter TRUE) (facebook FALSE))
+	(persona (nombre "Groucho") (sexo hombre) (edad 76) (altura 177) (peso 70) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 75) (religion ateo) (twitter TRUE) (facebook FALSE))
 
-	(persona (nombre marta) (sexo mujer) (edad 35) (altura 162) (peso 45) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 10) (religion cristiano) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Marta") (sexo mujer) (edad 35) (altura 162) (peso 45) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 10) (religion cristiano) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre antonio) (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 25) (religion ateo) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Antonio") (sexo hombre) (edad 22) (altura 175) (peso 65) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 25) (religion ateo) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre eva) (sexo mujer) (edad 43) (altura 166) (peso 70) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 5) (religion cristiano) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Eva") (sexo mujer) (edad 43) (altura 166) (peso 70) (cuestaHablar TRUE) (gustaSalir FALSE) (numAmigos 5) (religion cristiano) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre samuel) (sexo hombre) (edad 22) (altura 177) (peso 70) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 50) (religion ateo) (twitter TRUE) (facebook TRUE))
+	(persona (nombre "Samuel") (sexo hombre) (edad 22) (altura 177) (peso 70) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 50) (religion ateo) (twitter TRUE) (facebook TRUE))
 
-	(persona (nombre ana) (sexo mujer) (edad 22) (altura 165) (peso 55) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Ana") (sexo mujer) (edad 22) (altura 165) (peso 55) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 25) (religion ateo) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre crespo) (sexo hombre) (edad 47) (altura 175) (peso 70) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 1) (religion cristiano) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Javier") (sexo hombre) (edad 47) (altura 175) (peso 70) (cuestaHablar FALSE) (gustaSalir FALSE) (numAmigos 1) (religion cristiano) (twitter FALSE) (facebook FALSE))
 
-	(persona (nombre sandra) (sexo mujer) (edad 31) (altura 170) (peso 60) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 23) (religion ateo) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Sandra") (sexo mujer) (edad 31) (altura 170) (peso 60) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 23) (religion ateo) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre abel) (sexo hombre) (edad 23) (altura 167) (peso 55) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 15) (religion ateo) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Abel") (sexo hombre) (edad 23) (altura 167) (peso 55) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 15) (religion ateo) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre elena) (sexo mujer) (edad 21) (altura 170) (peso 60) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 45) (religion cristiano) (twitter FALSE) (facebook TRUE))
+	(persona (nombre "Elena") (sexo mujer) (edad 21) (altura 170) (peso 60) (cuestaHablar FALSE) (gustaSalir TRUE) (numAmigos 45) (religion cristiano) (twitter FALSE) (facebook TRUE))
 
-	(persona (nombre mario) (sexo hombre) (edad 45) (altura 165) (peso 70) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 14) (religion cristiano) (twitter FALSE) (facebook FALSE))
+	(persona (nombre "Mario") (sexo hombre) (edad 45) (altura 165) (peso 70) (cuestaHablar TRUE) (gustaSalir TRUE) (numAmigos 14) (religion cristiano) (twitter FALSE) (facebook FALSE))
 )
 
 
@@ -235,9 +235,34 @@
 	(modify ?e (tipoCita citaMagica))
 )
 
+;;;;;;;;;;;;;
+;; Mostrar ;;
+(defmodule mostrar)
+
+(defrule mostrarCompatibles
+	(declare (salience 30))
+	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita citaNormal))
+	=>
+	(printout t "> " ?n1 " y " ?n2 " son compatibles, pero no han sido citados." crlf)
+)
+
+(defrule mostrarCitados
+	(declare (salience 20))
+	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita citaNormal) (afinidad ?a))
+	=>
+	(printout t "$ ¡" ?n1 " y " ?n2 " han sido citados! (afinidad " ?a "%)" crlf)
+)
+
+(defrule mostrarCitadosMagicos
+	(declare (salience 10))
+	?e <- (emparejamiento (nombre1 ?n1) (nombre2 ?n2) (tipoCita citaMagica) (afinidad ?a))
+	=>
+	(printout t "@ ¡¡" ?n1 " y " ?n2 " tienen una Cita Mágica!! (afinidad " ?a "%)" crlf)
+)
+
 ;;;;;;;;;;;;
 ;; Prueba ;;
 
 (reset)
-(focus clasificar compatibilizar citar)
+(focus clasificar compatibilizar citar mostrar)
 (run)
